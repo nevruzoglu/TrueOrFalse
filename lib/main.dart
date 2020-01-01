@@ -1,4 +1,7 @@
+import 'questionBank.dart';
 import 'package:flutter/material.dart';
+
+QuestionBank questionBank = QuestionBank();
 
 void main() => runApp(Quizzler());
 
@@ -39,7 +42,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'This is where the question text will go.',
+                questionBank.questionListText(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -62,7 +65,28 @@ class _QuizPageState extends State<QuizPage> {
                   fontSize: 20.0,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                bool correctAnswer = questionBank.questionListAnswer();
+
+                if (correctAnswer == true) {
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                  );
+                } else {
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ),
+                  );
+                }
+                setState(() {
+                  questionBank.nextQuestion();
+                });
+              },
             ),
           ),
         ),
@@ -78,7 +102,28 @@ class _QuizPageState extends State<QuizPage> {
                   color: Colors.white,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                bool correctAnswer = questionBank.questionListAnswer();
+
+                if (correctAnswer == false) {
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                  );
+                } else {
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ),
+                  );
+                }
+                setState(() {
+                  questionBank.nextQuestion();
+                });
+              },
             ),
           ),
         ),
