@@ -4,30 +4,24 @@ class QuestionBank {
   int _questionNumber = 0;
 
   List<Question> _questionList = [
-    Question('Some cats are actually allergic to humans', true),
-    Question('You can lead a cow down stairs but not up stairs.', false),
-    Question('Approximately one quarter of human bones are in the feet.', true),
-    Question('A slug\'s blood is green.', true),
-    Question('Buzz Aldrin\'s mother\'s maiden name was \"Moon\".', true),
+    Question('An ostrich\'s eye is bigger than its brain.', true),
+    Question(
+        'About five percent of the body of a jellyfish is solid matter, the rest is water.',
+        true),
+    Question('Germany drinks the most beer in the world per person.', false),
+    Question('The sum of all the numbers on a roulette wheel is 666.', true),
+    Question('Polar bears’ skin is black.', true),
     Question('It is illegal to pee in the Ocean in Portugal.', true),
     Question(
         'No piece of square dry paper can be folded in half more than 7 times.',
         false),
-    Question(
-        'In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',
-        true),
-    Question(
-        'The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.',
-        false),
-    Question(
-        'The total surface area of two human lungs is approximately 70 square metres.',
-        true),
+    Question('The name of Batman\’s butler is Albert.', false),
+    Question('Elvis Presley had a twin brother.', true),
+    Question('The Great Wall Of China is visible from the moon.', false),
     Question('Google was originally called \"Backrub\".', true),
+    Question('Fortune cookies were invented in China', false),
     Question(
-        'Chocolate affects a dog\'s heart and nervous system; a few ounces are enough to kill a small dog.',
-        true),
-    Question(
-        'In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.',
+        'It\’s illegal in Georgia to eat fried chicken with a knife and fork.',
         true),
   ];
 
@@ -43,5 +37,16 @@ class QuestionBank {
 
   bool questionListAnswer() {
     return _questionList[_questionNumber].questionAnswer;
+  }
+
+  bool isFinished() {
+    if (_questionNumber > _questionList.length - 2) {
+      return true;
+    } else
+      return false;
+  }
+
+  void reset() {
+    _questionNumber = 0;
   }
 }
