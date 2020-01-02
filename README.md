@@ -4,5 +4,5 @@ Flutter game with QuestionBank file and answer tracking.
 
 
 
-![Main Screen](https://github.com/nevruzoglu/dice_roll/blob/master/images/dicereadme.png)
-![Final Screen](https://github.com/nevruzoglu/dice_roll/blob/master/images/dicereadme.png)
+![Main Screen](https://github.com/nevruzoglu/TrueOrFalse/blob/master/images/ss1.png)
+![Final Screen](https://github.com/nevruzoglu/TrueOrFalse/blob/master/images/ss2.png)
